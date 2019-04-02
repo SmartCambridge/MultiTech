@@ -1,5 +1,5 @@
 # MultiTech
-Information about CSC MultiTech LoRaWAN gateway configuration.
+Information about CSN MultiTech LoRaWAN gateway configuration.
 
 ## Types of gateway
 
@@ -19,4 +19,4 @@ The small white plastic gateway is a *MultiConnect® Conduit® AP* (**MTCAP**). 
 
 ## General setup
 
-These gateways should all be registered to the main CSC TTN account with gateway IDs like `csc-mtcap-014abe`, `csc-mtcdtip-003c6f` etc (i.e. "csc-" + the product code of the gateway + the last 12 bits of the LoRa node address). Currently we're pointing them directly at the `ttn-router-eu` router (not using a local relay). They use DHCP to obtain their IP addresses wherever they are connected, so the local computer officer needs to be provided with the ethernet MAC address of the gateways to register them in their DHCP server.
+These gateways should all be registered to the main CSN TTN account with gateway IDs like `csn-mtcap-014abe`, `csn-mtcdtip-003c6f` etc (i.e. "csn-" + the product code of the gateway + the last 12 bits of the LoRa node address). Currently we're pointing them directly at the `ttn-router-eu` router (not using a local relay). They use DHCP to obtain their IP addresses wherever they are connected, so the local computer officer needs to be provided with the ethernet MAC address of the gateways to register them in their DHCP server.
