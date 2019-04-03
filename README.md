@@ -60,3 +60,9 @@ These instructions apply to gateways shipped with 1.6.x firmware.
     - Run `wget https://github.com/kersing/multitech-installer/raw/master/installer.sh`
     - Run `sh installer.sh`
     - Enter appropriate details
+6. Sixth boot
+    - Set admin password
+7. Seventh boot
+    - Configure networking
+8. Eighth boot
+    - Save default config
