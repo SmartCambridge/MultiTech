@@ -25,7 +25,7 @@ These gateways should all be registered to the main CSN TTN account with gateway
 
 When the LoRaWAN gateways come from the distributor, they are configured to have the static IP address of 192.168.2.1. With the AEP gateways we use, a DHCP client is also enabled by default, with the AEP gateway falling back to a static address after 20 seconds.
 
-We use a Huawei E5577 router to provide a network connection between our setup PC, the LoRaWAN gateway, and the internet. This router presents a LAN which allows clients such as our setup PC to obtain an address by DHCP within 192.168.2.64/24-192.168.2.128/24 with internet gateway address 192.168.2.254.
+We use a Huawei E5770 router to provide a network connection between our setup PC, the LoRaWAN gateway, and the internet. This router presents a LAN which allows clients such as our setup PC to obtain an address by DHCP within 192.168.2.64/24-192.168.2.128/24 with internet gateway address 192.168.2.254.
 
 We configure the LoRaWAN gateways using a web browser and an SSH client.
 
