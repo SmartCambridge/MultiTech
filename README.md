@@ -37,6 +37,7 @@ These instructions apply to gateways shipped with 1.6.x firmware.
     - Browse to https://192.168.2.1/ and continue despite the certificate warning. We can configure a real certificate later.
     - The default credentials to log in to the web interface are admin/admin
     - A wizard will appear. We will accept most of the defaults.
+    - On the time zone configuration section, set the time zone to Europe/London
     - On the network settings page, add the correct information for the gateway address and DNS servers. For the Huawei network this should be 192.168.2.254 for the gateway, and Google's DNS servers 8.8.8.8 and 4.4.4.4
     - The gateway is configured to run a DHCP **server** by default. Disable this.
     - Reboot
