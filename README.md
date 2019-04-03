@@ -54,7 +54,7 @@ These instructions apply to gateways shipped with 1.6.x firmware.
     - Temporarily enable `Network Server`, set frequency plan to EU868, and save. Then disable the network server.
     - Do the same for the `Packet Forwarder`.
 5. Fifth boot
-    - We will switch to using Jac Kersing's packet forwarder. Instructions for doing this may be found on [TTN's web site about AEP MultiTech Conduits)[https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html].
+    - We will switch to using Jac Kersing's packet forwarder. Instructions for doing this may be found on [TTN's web site about AEP MultiTech Conduits](https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html).
     - In the TTN console, register a new Gateway ID.
     - SSH to the IP address of the LoRaWAN gateway and log in with admin credentials.
     - Run `wget https://github.com/kersing/multitech-installer/raw/master/installer.sh`
