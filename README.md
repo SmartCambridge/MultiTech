@@ -49,7 +49,7 @@ These instructions apply to gateways shipped with 1.6.x firmware.
     - Enter our key from Device HQ web site.
     - Switch auto update frequency to 240
 4. Fourth boot
-    - By default, the gateway is configured to use US915 frequencies. To swith it back to EU868 log in to the web interface.
+    - By default, the gateway is configured to use US915 frequencies. To switch it back to EU868 log in to the web interface.
     - Select `Setup` -> `LoRa Network Server`.
     - Temporarily enable `Network Server`, set frequency plan to EU868, and save. Then disable the network server.
     - Do the same for the `Packet Forwarder`.
