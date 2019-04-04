@@ -1,5 +1,5 @@
 # MultiTech
-Information about CSN MultiTech LoRaWAN gateway configuration.
+Information about Cambridge Sensor Network MultiTech LoRaWAN gateway configuration.
 
 ## Types of gateway
 
