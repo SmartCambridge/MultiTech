@@ -21,13 +21,18 @@ The small white plastic gateway is a *MultiConnect® Conduit® AP* (**MTCAP**). 
 
 These gateways should all be registered to the main CSN TTN account with gateway IDs like `csn-mtcap-014abe`, `csn-mtcdtip-003c6f` etc (i.e. "csn-" + the product code of the gateway + the last 12 bits of the LoRa node address). Currently we're pointing them directly at the `ttn-router-eu` router (not using a local relay). They use DHCP to obtain their IP addresses wherever they are connected, so the local computer officer needs to be provided with the ethernet MAC address of the gateways to register them in their DHCP server.
 
-## From box to deployed
+## Configuring a new Multitech LoraWAN gateway 
 
-When the LoRaWAN gateways come from the distributor, they are configured to have the static IP address of 192.168.2.1. With the AEP gateways we use, a DHCP client is also enabled by default, with the AEP gateway falling back to a static address after 20 seconds.
+Before starting, collect essential settings information from an existing production server 
+in `tfc_prod/csn/secrets`.
 
-We use a Huawei E5770 router to provide a network connection between our setup PC, the LoRaWAN gateway, and the internet. This router presents a LAN which allows clients such as our setup PC to obtain an address by DHCP within 192.168.2.64/24-192.168.2.128/24 with internet gateway address 192.168.2.254.
+### Initial setup
 
-We configure the LoRaWAN gateways using a web browser and an SSH client.
+1. Get a stand-alone ethernet switch, no WAN connectivity needed.
+2. Connect the Multitech gateway to the switch and power it up.  The gateway with start with IP 192.168.2.1 and 
+run a *DHCP server* which will serve addresses in the 192.168.2.X range.
+3. Connect a laptop or other workstation configured to accept DHCP addresses to the same switch.  Alternatively
+you can configure the workstation to use manual settings and use 192.168.2.100, 255.255.255.0
 
 When making changes to the MultiTech gateways, the changes are only applied once the gateways have been rebooted.
 
