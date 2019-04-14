@@ -55,5 +55,5 @@ These instructions apply to gateways shipped with 1.6.x firmware.
     - Run `wget https://github.com/kersing/multitech-installer/raw/master/installer.sh`
     - Run `sh installer.sh`
     - Enter appropriate details
-8. Eighth boot
-    - Save default config
+8. Sixth boot - save configuration to survive factory resets (if desired)
+    - Save default config via gateway menu Administration - Save/Restore.
