@@ -37,10 +37,12 @@ These instructions apply to gateways shipped with 1.6.x firmware.
     - Note that every time the firmware on the devices is updated, the packet forwarder will need to be reinstalled (if a custom packet forwarder is being used).
     - Reboot
 3. Third boot - set up 'Remote Management' in gateway using Multitech key
-    - Configure the gateway in [Device HQ](https://www.devicehq.com/), email admin@smartcambridge.org, pwd as tfc_prod/secrets.sh
     - From the gateway's web interface, select `Administration` -> `Remote Management`
-    - Enter our key from Device HQ web site (top-right account name, drop-down, Account Info)
-    - Switch auto update Check-In Interval to 240
+    - Enter 'Account Key' as obtained from Device HQ web site (top-right account name, drop-down, Account Info)
+    - Switch auto update Check-In Interval to 240, check the 'Enabled' checkbox and click 'Submit' button.
+    - On gateway menu, click 'Save and restart' and gateway should appear 
+    - Configure the gateway in [Device HQ](https://www.devicehq.com/), email admin@smartcambridge.org, pwd as tfc_prod/secrets.sh
+    
 4. Fourth boot
     - By default, the gateway is configured to use US915 frequencies. To switch it back to EU868 log in to the web interface.
     - Select `Setup` -> `LoRa Network Server`.
