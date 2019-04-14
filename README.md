@@ -1,6 +1,8 @@
 # MultiTech
 Information about Cambridge Sensor Network MultiTech LoRaWAN gateway configuration.
 
+(For Installation, see [installation readme](GATEWAY_INSTALLATION.md))
+
 ## Types of gateway
 
 We currently have three types of MultiTech LoRaWAN gateway. All types have onboard copper ethernet ports.
