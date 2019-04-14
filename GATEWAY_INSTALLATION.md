@@ -21,23 +21,26 @@ When making changes to the MultiTech gateways, the changes are only applied once
 
 These instructions apply to gateways shipped with 1.6.x firmware.
 
-1. First boot.
+1. First boot - change admin password and setup IP networking
     - Browse to https://192.168.2.1/ and continue despite the certificate warning. We can configure a real certificate later.
     - The default credentials to log in to the web interface are admin/admin
     - A wizard will appear. We will accept most of the defaults.
+    - Get the password from SmartCambridge tfc_prod/secrets.sh, reset the 'admin' user password to this.
     - On the time zone configuration section, set the time zone to Europe/London
     - On the network settings page, add the correct information for the gateway address and DNS servers. For the Huawei network this should be 192.168.2.254 for the gateway, and Google's DNS servers 8.8.8.8 and 4.4.4.4
-    - The gateway is configured to run a DHCP **server** by default. Disable this.
+    - The gateway is configured to run a DHCP **server** by default. Disable this by choosing the neworking 'DHCP Client' option
     - Reboot
-2. Second boot
-    - Update the firmware on the gateway. The new firmware is available from the [MultiTech Downloads](http://www.multitech.net/developer/downloads/) pages. For the metal gateways, use "Conduit: AEP Model w/Node-RED", for the plastic Coduit AP use "Conduit Access Point: AEP Model (MTCAP)"
-    - Note that every time the firmware on the devices is updated, the packet forwarder will need to be reintalled (if a custom packet forwarder is being used).
+2. Second boot - Update firmware
+    - The gateway should reboot as a DHCP client, so now find IP address.
+    - Browse to [MultiTech Downloads](http://www.multitech.net/developer/downloads/) pages. For the metal gateways, use "Conduit: AEP Model w/Node-RED", for the plastic Conduit AP use "Conduit Access Point: AEP Model (MTCAP)"
+    - Browse to IP address of gateway, login as 'admin' now with tfc_prod/secrets.sh password. From menu select Administration - Update Firmware.
+    - Note that every time the firmware on the devices is updated, the packet forwarder will need to be reinstalled (if a custom packet forwarder is being used).
     - Reboot
-3. Third boot
-    - Configure the gateway in [Device HQ](https://www.devicehq.com/)
+3. Third boot - set up 'Remote Management' in gateway using Multitech key
+    - Configure the gateway in [Device HQ](https://www.devicehq.com/), email admin@smartcambridge.org, pwd as tfc_prod/secrets.sh
     - From the gateway's web interface, select `Administration` -> `Remote Management`
-    - Enter our key from Device HQ web site.
-    - Switch auto update frequency to 240
+    - Enter our key from Device HQ web site (top-right account name, drop-down, Account Info)
+    - Switch auto update Check-In Interval to 240
 4. Fourth boot
     - By default, the gateway is configured to use US915 frequencies. To switch it back to EU868 log in to the web interface.
     - Select `Setup` -> `LoRa Network Server`.
