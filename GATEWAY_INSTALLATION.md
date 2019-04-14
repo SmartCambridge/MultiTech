@@ -43,21 +43,17 @@ These instructions apply to gateways shipped with 1.6.x firmware.
     - On gateway menu, click 'Save and restart' and gateway should appear 
     - Configure the gateway in [Device HQ](https://www.devicehq.com/), email admin@smartcambridge.org, pwd as tfc_prod/secrets.sh
     
-4. Fourth boot
+4. Fourth boot - set gateway to use EU868 LoraWAN frequencies
     - By default, the gateway is configured to use US915 frequencies. To switch it back to EU868 log in to the web interface.
     - Select `Setup` -> `LoRa Network Server`.
     - Temporarily enable `Network Server`, set frequency plan to EU868, and save. Then disable the network server.
     - Do the same for the `Packet Forwarder`.
-5. Fifth boot
+5. Fifth boot - set up custom packet forwarder
     - We will switch to using Jac Kersing's packet forwarder. Instructions for doing this may be found on [TTN's web site about AEP MultiTech Conduits](https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html).
-    - In the TTN console, register a new Gateway ID.
+    - In the TTN console (user CambridgeSensorNetwork), register a new Gateway ID.
     - SSH to the IP address of the LoRaWAN gateway and log in with admin credentials.
     - Run `wget https://github.com/kersing/multitech-installer/raw/master/installer.sh`
     - Run `sh installer.sh`
     - Enter appropriate details
-6. Sixth boot
-    - Set admin password
-7. Seventh boot
-    - Configure networking
 8. Eighth boot
     - Save default config
