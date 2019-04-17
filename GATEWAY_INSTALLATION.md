@@ -79,14 +79,17 @@ These instructions apply to gateways shipped with 1.6.x firmware.
     the mode set to `DISABLED`.
     - On the left-menu, click `Save and Restart`.
     
-5. Fifth boot - set up custom packet forwarder
+5. Fifth boot - set up custom packet forwarder via SSH terminal session to gateway
+    - SSH to the IP address of the LoRaWAN gateway and log in with admin credentials.
     - We will switch to using Jac Kersing's packet forwarder. Instructions for doing this may be found on 
     [TTN's web site about AEP MultiTech Conduits](https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html).
-    - In the TTN console (user CambridgeSensorNetwork), register a new Gateway ID.
-    - SSH to the IP address of the LoRaWAN gateway and log in with admin credentials.
-    - Run `wget https://github.com/kersing/multitech-installer/raw/master/installer.sh`
-    - Run `sh installer.sh`
-    - Enter appropriate details
+    - `wget https://github.com/kersing/multitech-installer/raw/master/installer.sh --no-check-certificate`
+    - `chmod +x installer.sh`
+    - `... time zone and network?` hit '1 <Enter>'
+    - `Gateway ID:` as entered in TTN console, e.g. 'csn-mtcdtip-012345 <Enter>'
+    - `Gateway Key:` <copy/paste from TTN gateway 'Overview' page>, i.e. begins `ttn-account-...`. Hit '1 <Enter>' to confirm.
+    - `Email...`: `admin@smartcambridge.org` <Enter>, confirm all with '1 <Enter>'
+    - Visit the TTN console and view `Gateways` and in a few mins you should see new gateway as 'connected'.
     
 6. Sixth boot - save configuration to survive factory resets (if desired)
     - Save default config via gateway menu Administration - Save/Restore.
