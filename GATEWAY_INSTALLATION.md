@@ -13,11 +13,10 @@ in `tfc_prod/csn/secrets`.
 
 1. Logon at https://console.thethingsnetwork.org (user CambridgeSensorNetowrk or admin@smartcambridge.org)
 2. Select 'Gateways' on top menubar, click '(+) register gateway'.
-3. Gateway ID: `csn-mtx-xxxxxx` where `-mtx-` will be
+3. Gateway ID: `csn-mtx-xxxxxx` where `-xxxxxx` is the last 6 digits of the gateway Lora ID and `-mtx-` will be
     - `mtcap` for a Multitech indoor LoraWAN Access Point (internal antenna)
     - `mtcdt` for a Multitech indoor Conduit LoraWAN Gateway (external whip antenna)
     - `mtcdtip` for a Multitech outdoor IP67 Conduit LoraWAN Gateway (Lora an LTE antennas)
-    and `-xxxxxx` is the last 6 digits of the gateway Lora ID.
 4. Description: `Cambridge Sensor network xxxx` where xxxx is at least location e.g. `Computer Lab roof`.
 5. Frequency Plan: `EU868`.
 6. Router: `ttn-router-eu` (will be suggested automatically after selecting Frequency Plan).
