@@ -9,7 +9,24 @@ These gateways should all be registered to the main CSN TTN account with gateway
 Before starting, collect essential settings information from an existing production server 
 in `tfc_prod/csn/secrets`.
 
-### Initial setup
+### Initial setup - The Things Network
+
+1. Logon at https://console.thethingsnetwork.org (user CambridgeSensorNetowrk or admin@smartcambridge.org)
+2. Select 'Gateways' on top menubar, click '(+) register gateway'.
+3. Gateway ID: `csn-mtx-xxxxxx` where `-mtx-` will be
+    - `mtcap` for a Multitech indoor LoraWAN Access Point (internal antenna)
+    - `mtcdt` for a Multitech indoor Conduit LoraWAN Gateway (external whip antenna)
+    - `mtcdtip` for a Multitech outdoor IP67 Conduit LoraWAN Gateway (Lora an LTE antennas)
+4. Description: `Cambridge Sensor network xxxx` where xxxx is at least location e.g. `Computer Lab roof`.
+5. Frequency Plan: `EU868`.
+6. Router: `ttn-router-eu` (will be suggested automatically after selecting Frequency Plan).
+7. Location: click on the map.
+8. Antenna Placement: `indoor`|`outdoor` as appropriate.
+9. Click `Register Gateway` bottom right of page.
+10. After registration, the gateway `Overview` page will include an auto-generated `Gateway key` which
+will be needed in the Multitech 'setup packet forwarder' step below.
+
+### Initial setup - Multitech Gateway and https://devicehq.com
 
 1. Get a stand-alone ethernet switch, no WAN connectivity needed.
 2. Connect the Multitech gateway to the switch and power it up.  The gateway with start with IP 192.168.2.1 and 
