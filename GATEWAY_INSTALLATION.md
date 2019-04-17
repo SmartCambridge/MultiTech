@@ -70,9 +70,14 @@ These instructions apply to gateways shipped with 1.6.x firmware.
     
 4. Fourth boot - set gateway to use EU868 LoraWAN frequencies
     - By default, the gateway is configured to use US915 frequencies. To switch it back to EU868 log in to the web interface.
-    - Select `Setup` -> `LoRa Network Server`.
-    - Temporarily enable `Network Server`, set frequency plan to EU868, and save. Then disable the network server.
-    - Do the same for the `Packet Forwarder`.
+    - Select `LoRaWAN` -> `Network Settings`. You may now get an error message `Detected card (868) does not match selected    channel plan (US915)` which we're about to fix.
+    - Select `LoRa mode` -> `Mode` -> `Network Server` (i.e. change from `DISABLED`).
+    - In `LoRaWAN Network Server Configuration` set `Channel Plan` to EU868, and click `Submit` at bottom of page.
+    - Do the same for the `Packet Forwarder`, again clicking `Submit`.
+    - At the top `LoRa Mode` -> `Mode` drop-down, select `DISABLED` and `Submit`. To check your settings you can select
+    `Network Server` and `Packet Forwarder` and confirm the `EU868` settings are there ok. Make sure you finish with
+    the mode set to `DISABLED`.
+    - On the left-menu, click `Save and Restart`.
     
 5. Fifth boot - set up custom packet forwarder
     - We will switch to using Jac Kersing's packet forwarder. Instructions for doing this may be found on 
