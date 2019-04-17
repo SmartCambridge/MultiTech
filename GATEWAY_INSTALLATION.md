@@ -47,30 +47,41 @@ These instructions apply to gateways shipped with 1.6.x firmware.
     - On the network settings page, add the correct information for the gateway address and DNS servers. For the Huawei network this should be 192.168.2.254 for the gateway, and Google's DNS servers 8.8.8.8 and 4.4.4.4
     - The gateway is configured to run a DHCP **server** by default. Disable this by choosing the neworking 'DHCP Client' option
     - Reboot
+    
 2. Second boot - Update firmware
     - The gateway should reboot as a DHCP client, so now find IP address.
     - Browse to [MultiTech Downloads](http://www.multitech.net/developer/downloads/) pages. For the metal gateways, use "Conduit: AEP Model w/Node-RED", for the plastic Conduit AP use "Conduit Access Point: AEP Model (MTCAP)"
     - Browse to IP address of gateway, login as 'admin' now with tfc_prod/secrets.sh password. From menu select Administration - Update Firmware.
     - Note that every time the firmware on the devices is updated, the packet forwarder will need to be reinstalled (if a custom packet forwarder is being used).
     - Reboot
+    
 3. Third boot - set up 'Remote Management' in gateway using Multitech key
     - From the gateway's web interface, select `Administration` -> `Remote Management`
     - Enter 'Account Key' as obtained from Device HQ web site (top-right account name, drop-down, Account Info)
     - Switch auto update Check-In Interval to 240, check the 'Enabled' checkbox and click 'Submit' button.
     - On gateway menu, click 'Save and restart' and gateway should appear 
     - Configure the gateway in [Device HQ](https://www.devicehq.com/), email admin@smartcambridge.org, pwd as tfc_prod/secrets.sh
+    - Browse to https://devicehq.com, logon as admin@smartcambridge.org.
+    - Click `Devices` (which means gateways). In due course the new gateway will appear, matching the
+    `Serial` written on the device (or you might note the gateway with a ~2min uptime).
+    - Click the right-side 'pen' edit symbol for the new gateway, update the `Description` to exactly match the 
+    `Gateway ID` set on TTN, e.g. `csn-mtcdtip-00de8c` (this isn't technically required, but visually helpful). Also
+    set the location, and save.
     
 4. Fourth boot - set gateway to use EU868 LoraWAN frequencies
     - By default, the gateway is configured to use US915 frequencies. To switch it back to EU868 log in to the web interface.
     - Select `Setup` -> `LoRa Network Server`.
     - Temporarily enable `Network Server`, set frequency plan to EU868, and save. Then disable the network server.
     - Do the same for the `Packet Forwarder`.
+    
 5. Fifth boot - set up custom packet forwarder
-    - We will switch to using Jac Kersing's packet forwarder. Instructions for doing this may be found on [TTN's web site about AEP MultiTech Conduits](https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html).
+    - We will switch to using Jac Kersing's packet forwarder. Instructions for doing this may be found on 
+    [TTN's web site about AEP MultiTech Conduits](https://www.thethingsnetwork.org/docs/gateways/multitech/aep.html).
     - In the TTN console (user CambridgeSensorNetwork), register a new Gateway ID.
     - SSH to the IP address of the LoRaWAN gateway and log in with admin credentials.
     - Run `wget https://github.com/kersing/multitech-installer/raw/master/installer.sh`
     - Run `sh installer.sh`
     - Enter appropriate details
-8. Sixth boot - save configuration to survive factory resets (if desired)
+    
+6. Sixth boot - save configuration to survive factory resets (if desired)
     - Save default config via gateway menu Administration - Save/Restore.
