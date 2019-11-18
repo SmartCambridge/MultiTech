@@ -53,6 +53,7 @@ These instructions apply to gateways shipped with 1.6.x firmware.
     - Browse to [MultiTech Downloads](http://www.multitech.net/developer/downloads/) pages. For the metal gateways, use "Conduit: AEP Model w/Node-RED", for the plastic Conduit AP use "Conduit Access Point: AEP Model (MTCAP)"
     - Browse to IP address of gateway, login as 'admin' now with tfc_prod/secrets.sh password. From menu select Administration - Update Firmware.
     - Note that every time the firmware on the devices is updated, the packet forwarder will need to be reinstalled (if a custom packet forwarder is being used).
+    - You may need to upgrade through several different version of firmware. If you want to upgrade to 5.x (CSN default) you must be on at least 1.6.4 before you begin. For more information, see: http://www.multitech.net/developer/software/aep/aep-firmware-changelog/
     - Reboot
     
 3. Third boot - set up 'Remote Management' in gateway using Multitech key
